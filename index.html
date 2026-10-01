@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>করমদি ডিগ্রি কলেজ | Student Hub</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+}
+
+header{
+  background:linear-gradient(135deg,#123c69,#176b87);
+  color:white;
+  padding:40px 20px;
+  text-align:center;
+}
+
+header .logo{
+  width:80px;
+  height:80px;
+  margin:auto;
+  border-radius:50%;
+  background:white;
+  color:#123c69;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:35px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+header h1{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+header p{
+  opacity:.9;
+  font-size:16px;
+}
+
+nav{
+  background:white;
+  padding:12px;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+nav button{
+  border:none;
+  background:#edf3f8;
+  color:#17324d;
+  padding:11px 16px;
+  border-radius:10px;
+  white-space:nowrap;
+  font-size:14px;
+  cursor:pointer;
+}
+
+nav button:hover{
+  background:#176b87;
+  color:white;
+}
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:25px 16px;
+}
+
+.hero{
+  background:white;
+  border-radius:18px;
+  padding:30px 22px;
+  margin-bottom:22px;
+  box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.hero h2{
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#667085;
+  line-height:1.7;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.card{
+  background:white;
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 4px 15px rgba(0,0,0,.06);
+  cursor:pointer;
+}
+
+.card .icon{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#667085;
+  line-height:1.5;
+}
+
+.section{
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  margin-bottom:20px;
+  box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.section h2{
+  margin-bottom:18px;
+}
+
+.notice{
+  padding:16px;
+  background:#f5f8fc;
+  border-left:5px solid #176b87;
+  border-radius:8px;
+  margin-bottom:12px;
+}
+
+.notice strong{
+  display:block;
+  margin-bottom:5px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+}
+
+th,td{
+  border:1px solid #e1e7ee;
+  padding:12px;
+  text-align:center;
+}
+
+th{
+  background:#176b87;
+  color:white;
+}
+
+td{
+  background:#fff;
+}
+
+.subject{
+  display:inline-block;
+  background:#edf5f8;
+  padding:10px 14px;
+  border-radius:9px;
+  margin:5px;
+}
+
+.contact-box{
+  line-height:2;
+  color:#455468;
+}
+
+footer{
+  margin-top:20px;
+  background:#102c46;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+
+footer p{
+  margin:5px;
+  opacity:.85;
+}
+
+@media(max-width:650px){
+  header h1{
+    font-size:24px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .hero h2{
+    font-size:21px;
+  }
+
+  th,td{
+    padding:8px 5px;
+    font-size:13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ক</div>
+  <h1>করমদি ডিগ্রি কলেজ</h1>
+  <p>Digital Student Hub — Demo Version</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">🏠 হোম</button>
+  <button onclick="showPage('notice')">📢 নোটিশ</button>
+  <button onclick="showPage('routine')">📅 রুটিন</button>
+  <button onclick="showPage('notes')">📚 নোট</button>
+  <button onclick="showPage('question')">📝 প্রশ্নব্যাংক</button>
+  <button onclick="showPage('syllabus')">📖 সিলেবাস</button>
+  <button onclick="showPage('contact')">☎️ যোগাযোগ</button>
+</nav>
+
+<main id="content">
+
+<section class="hero">
+  <h2>স্বাগতম 👋</h2>
+  <p>
+    করমদি ডিগ্রি কলেজের শিক্ষার্থীদের জন্য তৈরি
+    একটি আধুনিক Digital Student Hub।
+    এখানে নোটিশ, ক্লাস রুটিন, পড়াশোনার নোট,
+    প্রশ্নব্যাংক ও অন্যান্য শিক্ষামূলক তথ্য পাওয়া যাবে।
+  </p>
+</section>
+
+<div class="cards">
+
+  <div class="card" onclick="showPage('notice')">
+    <div class="icon">📢</div>
+    <h3>কলেজ নোটিশ</h3>
+    <p>গুরুত্বপূর্ণ কলেজ নোটিশ ও ঘোষণা দেখুন।</p>
+  </div>
+
+  <div class="card" onclick="showPage('routine')">
+    <div class="icon">📅</div>
+    <h3>ক্লাস রুটিন</h3>
+    <p>বিভাগ ও শ্রেণি অনুযায়ী ক্লাস রুটিন।</p>
+  </div>
+
+  <div class="card" onclick="showPage('notes')">
+    <div class="icon">📚</div>
+    <h3>পড়াশোনার নোট</h3>
+    <p>বিষয় ও অধ্যায় অনুযায়ী শিক্ষামূলক নোট।</p>
+  </div>
+
+  <div class="card" onclick="showPage('question')">
+    <div class="icon">📝</div>
+    <h3>প্রশ্নব্যাংক</h3>
+    <p>পরীক্ষার প্রস্তুতির জন্য প্রশ্ন ও অনুশীলন।</p>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  <p>© 2026 করমদি ডিগ্রি কলেজ</p>
+  <p>Digital Student Hub — Demo</p>
+</footer>
+
+
+<script>
+
+function showPage(page){
+
+const content=document.getElementById("content");
+
+if(page==="home"){
+
+content.innerHTML=`
+
+<section class="hero">
+<h2>স্বাগতম 👋</h2>
+
+<p>
+করমদি ডিগ্রি কলেজের Digital Student Hub-এ
+আপনাকে স্বাগতম।
+</p>
+
+</section>
+
+<div class="cards">
+
+<div class="card" onclick="showPage('notice')">
+<div class="icon">📢</div>
+<h3>নোটিশ</h3>
+<p>কলেজের গুরুত্বপূর্ণ নোটিশ।</p>
+</div>
+
+<div class="card" onclick="showPage('routine')">
+<div class="icon">📅</div>
+<h3>রুটিন</h3>
+<p>ক্লাস রুটিন দেখুন।</p>
+</div>
+
+<div class="card" onclick="showPage('notes')">
+<div class="icon">📚</div>
+<h3>নোট</h3>
+<p>পড়াশোনার নোট।</p>
+</div>
+
+<div class="card" onclick="showPage('question')">
+<div class="icon">📝</div>
+<h3>প্রশ্নব্যাংক</h3>
+<p>পরীক্ষার প্রশ্ন।</p>
+</div>
+
+</div>
+`;
+}
+
+
+if(page==="notice"){
+
+content.innerHTML=`
+
+<section class="section">
+
+<h2>📢 কলেজ নোটিশ</h2>
+
+<div class="notice">
+<strong>ডেমো নোটিশ</strong>
+<p>এখানে কলেজের গুরুত্বপূর্ণ নোটিশ প্রকাশ করা হবে।</p>
+</div>
+
+<div class="notice">
+<strong>পরীক্ষার নোটিশ</strong>
+<p>পরীক্ষার তারিখ ও সময় এখানে দেওয়া হবে।</p>
+</div>
+
+<div class="notice">
+<strong>ছুটির নোটিশ</strong>
+<p>কলেজ বন্ধের তথ্য এখানে প্রকাশ করা হবে।</p>
+</div>
+
+</section>
+`;
+}
+
+
+if(page==="routine"){
+
+content.innerHTML=`
+
+<section class="section">
+
+<h2>📅 ক্লাস রুটিন</h2>
+
+<table>
+
+<tr>
+<th>দিন</th>
+<th>১ম ক্লাস</th>
+<th>২য় ক্লাস</th>
+<th>৩য় ক্লাস</th>
+</tr>
+
+<tr>
+<td>রবিবার</td>
+<td>বাংলা</td>
+<td>ইংরেজি</td>
+<td>ICT</td>
+</tr>
+
+<tr>
+<td>সোমবার</td>
+<td>পদার্থবিজ্ঞান</td>
+<td>রসায়ন</td>
+<td>গণিত</td>
+</tr>
+
+<tr>
+<td>মঙ্গলবার</td>
+<td>ইংরেজি</td>
+<td>ICT</td>
+<td>বাংলা</td>
+</tr>
+
+<tr>
+<td>বুধবার</td>
+<td>গণিত</td>
+<td>পদার্থবিজ্ঞান</td>
+<td>রসায়ন</td>
+</tr>
+
+</table>
+
+</section>
+`;
+}
+
+
+if(page==="notes"){
+
+content.innerHTML=`
+
+<section class="section">
+
+<h2>📚 পড়াশোনার নোট</h2>
+
+<div class="subject">বাংলা</div>
+<div class="subject">ইংরেজি</div>
+<div class="subject">ICT</div>
+<div class="subject">পদার্থবিজ্ঞান</div>
+<div class="subject">রসায়ন</div>
+<div class="subject">গণিত</div>
+
+<p style="margin-top:20px;color:#667085;">
+এখানে ভবিষ্যতে PDF ও অধ্যায়ভিত্তিক নোট যুক্ত করা যাবে।
+</p>
+
+</section>
+`;
+}
+
+
+if(page==="question"){
+
+content.innerHTML=`
+
+<section class="section">
+
+<h2>📝 প্রশ্নব্যাংক</h2>
+
+<div class="notice">
+<strong>ICT প্রশ্নব্যাংক</strong>
+<p>গুরুত্বপূর্ণ ICT প্রশ্ন এখানে যুক্ত করা হবে।</p>
+</div>
+
+<div class="notice">
+<strong>পদার্থবিজ্ঞান প্রশ্নব্যাংক</strong>
+<p>অধ্যায়ভিত্তিক পদার্থবিজ্ঞানের প্রশ্ন এখানে থাকবে।</p>
+</div>
+
+<div class="notice">
+<strong>রসায়ন প্রশ্নব্যাংক</strong>
+<p>গুরুত্বপূর্ণ রসায়ন প্রশ্ন এখানে থাকবে।</p>
+</div>
+
+</section>
+`;
+}
+
+
+if(page==="syllabus"){
+
+content.innerHTML=`
+
+<section class="section">
+
+<h2>📖 সিলেবাস</h2>
+
+<p style="line-height:1.8;color:#667085;">
+এখানে শ্রেণি ও বিষয় অনুযায়ী সিলেবাস দেওয়া হবে।
+</p>
+
+<br>
+
+<div class="subject">HSC 1st Year</div>
+<div class="subject">HSC 2nd Year</div>
+
+</section>
+`;
+}
+
+
+if(page==="contact"){
+
+content.innerHTML=`
+
+<section class="section">
+
+<h2>☎️ যোগাযোগ</h2>
+
+<div class="contact-box">
+
+<p>🏫 <strong>কলেজ:</strong> করমদি ডিগ্রি কলেজ</p>
+
+<p>📍 <strong>ঠিকানা:</strong> এখানে কলেজের সঠিক ঠিকানা যোগ করা হবে</p>
+
+<p>📞 <strong>ফোন:</strong> এখানে কলেজের অফিসিয়াল ফোন নম্বর যোগ করা হবে</p>
+
+<p>🌐 <strong>Website:</strong> এখানে অফিসিয়াল ওয়েবসাইট যুক্ত করা হবে</p>
+
+</div>
+
+</section>
+`;
+}
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+</html>
